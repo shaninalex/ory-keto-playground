@@ -10,3 +10,10 @@ class Role implements Namespace {
     member: User[]
   }
 }
+
+class PurchaseOrder implements Namespace {
+    related: {
+        creator: SubjectSet<Role, "member">[]
+        viewer: SubjectSet<Role, "member">[]
+    }
+}

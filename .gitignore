@@ -10,3 +10,4 @@ wheels/
 .venv
 .idea
 node_modules
+keto.db

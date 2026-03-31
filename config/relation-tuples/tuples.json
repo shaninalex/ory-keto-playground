@@ -10,5 +10,15 @@
     "object": "manager",
     "relation": "member",
     "subject_id": "07768613-1074-421e-999a-4426d2d9979a"
+  },
+  {
+    "namespace": "PurchaseOrder",
+    "object": "global",
+    "relation": "viewer",
+    "subject_set": {
+      "namespace": "Role",
+      "object": "manager",
+      "relation": "member"
+    }
   }
 ]

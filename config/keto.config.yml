@@ -4,14 +4,14 @@ log:
   level: debug
 
 namespaces:
-  location: file://./namespaces.keto.ts
+  location: file://./config/namespaces.keto.ts
 
 serve:
   read:
-    host: 0.0.0.0
+    host: 127.0.0.1
     port: 4466
   write:
-    host: 0.0.0.0
+    host: 127.0.0.1
     port: 4467
 
-dsn: memory
+dsn: sqlite3://./keto.db?_fk=true
