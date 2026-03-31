@@ -1,0 +1,14 @@
+[
+  {
+    "namespace": "Role",
+    "object": "worker",
+    "relation": "member",
+    "subject_id": "f8689777-015f-44b7-bb7d-4aa50b4956e4"
+  },
+  {
+    "namespace": "Role",
+    "object": "manager",
+    "relation": "member",
+    "subject_id": "07768613-1074-421e-999a-4426d2d9979a"
+  }
+]
