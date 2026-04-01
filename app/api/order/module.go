@@ -1,4 +1,4 @@
-package purchase_order
+package order
 
 import "go.uber.org/dig"
 

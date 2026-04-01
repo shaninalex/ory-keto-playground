@@ -1,13 +1,13 @@
 package api
 
 import (
-	"testketo/app/api/purchase_order"
+	"testketo/app/api/order"
 
 	"go.uber.org/dig"
 )
 
 func Module(c *dig.Container) error {
-	_ = purchase_order.Module(c)
+	_ = order.Module(c)
 
 	_ = c.Provide(ProvideAPI)
 

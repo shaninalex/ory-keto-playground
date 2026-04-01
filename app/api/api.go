@@ -2,7 +2,7 @@ package api
 
 import (
 	"net/http"
-	"testketo/app/api/purchase_order"
+	"testketo/app/api/order"
 	"testketo/app/pkg/config"
 
 	"github.com/gin-gonic/gin"
@@ -33,7 +33,7 @@ type ApiDeps struct {
 	dig.In
 
 	Config                  *config.Config
-	PurchaseOrderController *purchase_order.Controller
+	PurchaseOrderController *order.Controller
 }
 
 func ProvideAPI(deps ApiDeps) *gin.Engine {

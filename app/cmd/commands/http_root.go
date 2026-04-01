@@ -11,6 +11,7 @@ import (
 	"testketo/app/api"
 	"testketo/app/pkg/config"
 	"testketo/app/pkg/mock_db"
+	"testketo/app/pkg/permission"
 	"time"
 
 	"github.com/gin-gonic/gin"
@@ -35,6 +36,7 @@ func NewHttpRootCommand() (cmd *cobra.Command) {
 			_ = c.Provide(func() context.Context { return appContext })
 			_ = c.Provide(config.ProvideConfig(configPath))
 			_ = c.Provide(mock_db.ProvideDatabase)
+			_ = c.Provide(permission.ProvideKetoConnector)
 
 			_ = api.Module(c)
 
