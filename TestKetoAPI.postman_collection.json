@@ -1,0 +1,338 @@
+{
+  "info": {
+    "_postman_id": "ef282ee0-1896-4f56-8747-32eb42a0147d",
+    "name": "TestKetoAPI",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "11586531"
+  },
+  "item": [
+    {
+      "name": "orders ( worker )",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "X-USER",
+            "value": "f8689777-015f-44b7-bb7d-4aa50b4956e4",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8000/api/v1/orders",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "v1",
+            "orders"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "orders ( worker )",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-USER",
+                "value": "f8689777-015f-44b7-bb7d-4aa50b4956e4",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8000/api/v1/orders",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "v1",
+                "orders"
+              ]
+            }
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 01 Apr 2026 05:12:13 GMT"
+            },
+            {
+              "key": "Content-Length",
+              "value": "21"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"error\": \"Forbidden\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "orders ( manager )",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "X-USER",
+            "value": "07768613-1074-421e-999a-4426d2d9979a",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8000/api/v1/orders",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "v1",
+            "orders"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "orders ( manager )",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-USER",
+                "value": "07768613-1074-421e-999a-4426d2d9979a",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8000/api/v1/orders",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "v1",
+                "orders"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 01 Apr 2026 05:13:41 GMT"
+            },
+            {
+              "key": "Content-Length",
+              "value": "1122"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"orders\": [\n        {\n            \"id\": 123,\n            \"code\": \"ORD123\",\n            \"name\": \"test order 123\",\n            \"count\": 1,\n            \"total_amount\": 1,\n            \"items\": [\n                {\n                    \"id\": 123,\n                    \"code\": \"ORD123\",\n                    \"name\": \"test order 123\"\n                }\n            ],\n            \"processed_at\": \"2024-09-19T15:04:05-07:00\",\n            \"created_at\": \"2024-09-19T15:04:05-07:00\"\n        },\n        {\n            \"id\": 124,\n            \"code\": \"ORD124\",\n            \"name\": \"test order 124\",\n            \"count\": 2,\n            \"total_amount\": 2,\n            \"items\": [\n                {\n                    \"id\": 123123,\n                    \"code\": \"ORD123123\",\n                    \"name\": \"test order 123123\"\n                },\n                {\n                    \"id\": 38927,\n                    \"code\": \"ORD38927\",\n                    \"name\": \"test order 38927\"\n                }\n            ],\n            \"processed_at\": \"2024-09-19T15:04:05-07:00\",\n            \"created_at\": \"2024-09-19T15:04:05-07:00\"\n        }\n    ]\n}"
+        }
+      ]
+    },
+    {
+      "name": "orders create ( manager )",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "X-USER",
+            "value": "07768613-1074-421e-999a-4426d2d9979a",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"id\": 1234,\n    \"code\": \"ORD1234\",\n    \"name\": \"test order 12344\",\n    \"count\": 1,\n    \"total_amount\": 1,\n    \"items\": [\n        {\n            \"id\": 1,\n            \"code\": \"ORD\",\n            \"name\": \"test order \"\n        }\n    ],\n    \"processed_at\": \"2024-09-19T15:04:05-07:00\",\n    \"created_at\": \"2024-09-19T15:04:05-07:00\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/v1/orders",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "v1",
+            "orders"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "orders create ( manager )",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-USER",
+                "value": "07768613-1074-421e-999a-4426d2d9979a",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": 1234,\n    \"code\": \"ORD1234\",\n    \"name\": \"test order 12344\",\n    \"count\": 1,\n    \"total_amount\": 1,\n    \"items\": [\n        {\n            \"id\": 1,\n            \"code\": \"ORD\",\n            \"name\": \"test order \"\n        }\n    ],\n    \"processed_at\": \"2024-09-19T15:04:05-07:00\",\n    \"created_at\": \"2024-09-19T15:04:05-07:00\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/v1/orders",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "v1",
+                "orders"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 01 Apr 2026 05:14:36 GMT"
+            },
+            {
+              "key": "Content-Length",
+              "value": "254"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"order\": {\n        \"id\": 16429590471888590663,\n        \"code\": \"ORD1234\",\n        \"name\": \"test order 12344\",\n        \"count\": 1,\n        \"total_amount\": 1,\n        \"items\": [\n            {\n                \"id\": 1,\n                \"code\": \"ORD\",\n                \"name\": \"test order \"\n            }\n        ],\n        \"processed_at\": \"2024-09-19T15:04:05-07:00\",\n        \"created_at\": \"2026-04-01T08:14:36.715008854+03:00\"\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "orders create ( worker )",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "X-USER",
+            "value": "f8689777-015f-44b7-bb7d-4aa50b4956e4",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"id\": 1234,\n    \"code\": \"ORD1234\",\n    \"name\": \"test order 12344\",\n    \"count\": 1,\n    \"total_amount\": 1,\n    \"items\": [\n        {\n            \"id\": 1,\n            \"code\": \"ORD\",\n            \"name\": \"test order \"\n        }\n    ],\n    \"processed_at\": \"2024-09-19T15:04:05-07:00\",\n    \"created_at\": \"2024-09-19T15:04:05-07:00\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/v1/orders",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "v1",
+            "orders"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "orders create ( worker )",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-USER",
+                "value": "f8689777-015f-44b7-bb7d-4aa50b4956e4",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": 1234,\n    \"code\": \"ORD1234\",\n    \"name\": \"test order 12344\",\n    \"count\": 1,\n    \"total_amount\": 1,\n    \"items\": [\n        {\n            \"id\": 1,\n            \"code\": \"ORD\",\n            \"name\": \"test order \"\n        }\n    ],\n    \"processed_at\": \"2024-09-19T15:04:05-07:00\",\n    \"created_at\": \"2024-09-19T15:04:05-07:00\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/v1/orders",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "v1",
+                "orders"
+              ]
+            }
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 01 Apr 2026 05:15:40 GMT"
+            },
+            {
+              "key": "Content-Length",
+              "value": "21"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"error\": \"Forbidden\"\n}"
+        }
+      ]
+    }
+  ]
+}
